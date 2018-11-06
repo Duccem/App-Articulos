@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.roboto{
+     font-family: Roboto;
+}
+.pacifico {
+     font-family: Pacifico;
+}
+.lato{
+     font-family: Lato;
+}
+.card{
+     margin-top:20px;
+     border-radius: 4px;
+     background-color:#E3F2FD;
+     box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+}
+body{
+     background-color: #90CAF9;
+     margin:0;
+}
+/*#5DE5D9  068587*/
+
+.text-white{
+     color: white;
+}
+.text-center{
+     text-align: center;
+}
+.text-big{
+     font-size: 50px;
+}
