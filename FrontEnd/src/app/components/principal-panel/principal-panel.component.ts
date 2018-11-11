@@ -11,5 +11,6 @@ export class PrincipalPanelComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }

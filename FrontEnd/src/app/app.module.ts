@@ -28,6 +28,7 @@ import { PrincipalPanelComponent } from './components/principal-panel/principal-
     MaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogArticuloCreateComponent]
 })
 export class AppModule { }

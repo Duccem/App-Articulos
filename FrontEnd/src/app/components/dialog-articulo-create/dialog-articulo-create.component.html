@@ -1,3 +1,23 @@
-<p>
-  dialog-articulo-create works!
-</p>
+<div class="roboto">
+     <button class="float" mat-mini-fab mat-dialog-close color="primary" ><mat-icon >close</mat-icon></button>
+     <h2 mat-dialog-title class="pacifico">Nuevo Articulo</h2>
+     <mat-dialog-content class="row center-xs">
+          <div class="row">
+               <h4 class="col-md-12">Titulo del articulo</h4>
+               <mat-form-field class="col-md-12">
+                    <input matInput placeholder="Introduzca el titulo" type="text">
+               </mat-form-field>
+          </div>
+          <div class="row">
+               <h4 class="col-md-12">Articulo</h4>
+               <mat-form-field class="col-md-12">
+                    <textarea  matInput #Articulo placeholder="Introduzca el contenido del articulo" maxlength="500" rows="7" cols="80"></textarea>
+                    <mat-hint align="end">{{Articulo.value.length}} / 500</mat-hint>
+               </mat-form-field>
+          </div>
+     </mat-dialog-content>
+     <mat-dialog-actions align="end">
+          <button mat-raised-button mat-dialog-close color="primary"><mat-icon>backspace</mat-icon> Cancelar</button>
+          <button mat-raised-button color="primary"><mat-icon>save</mat-icon>Guardar</button>
+     </mat-dialog-actions>
+</div>
