@@ -1,0 +1,28 @@
+<div class="card col-md-12">
+     <div class="row center-xs">
+          <h4 class="col-md-8 text-center">Busque el articulo de su agrado</h4>
+          <mat-form-field class="col-md-8" >
+               <input matInput type="text" placeholder="Introduzca su busqueda" [(ngModel)]="value">
+               <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                        <mat-icon>close</mat-icon>
+               </button>
+          </mat-form-field>
+          <div class="col-md-8">
+               <div class="row center-xs middle-xs">
+                    <button class="col-md-4" style="height:50px;" mat-raised-button color="primary" [routerLink]="['/new']"><mat-icon>add</mat-icon>Crear Articulo</button>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-5 row">
+                         <h4 class="col-md-12" style="text-align:left;">Filtre por numero de visitas</h4>
+                         <mat-form-field class="col-md-12">
+                              <mat-select (ngModelChange)="FilterMenu($event)">
+                                   <mat-option value="0">none</mat-option>
+                                   <mat-option value="0">> 10 </mat-option>
+                                   <mat-option value="0">> 20</mat-option>
+                                   <mat-option value="0">> 50</mat-option>
+                              </mat-select>
+                         </mat-form-field>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

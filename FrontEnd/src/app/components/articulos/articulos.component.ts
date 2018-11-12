@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog, MatDialogConfig} from "@angular/material";
-import { DialogArticuloCreateComponent } from '../dialog-articulo-create/dialog-articulo-create.component';
-import { DialogArticuloShowComponent } from '../dialog-articulo-show/dialog-articulo-show.component';
+import {ArticulosService} from '../../services/articulos.service';
+import { Articulo } from '../../models/articulo';
+
 @Component({
   selector: 'app-articulos',
   templateUrl: './articulos.component.html',
@@ -9,26 +9,19 @@ import { DialogArticuloShowComponent } from '../dialog-articulo-show/dialog-arti
 })
 export class ArticulosComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private articuloService:ArticulosService) { }
 
   ngOnInit() {
+       this.getArticulos();
   }
+  getArticulos(){
+       this.articuloService.getArticulos()
+          .subscribe(res =>{
+               this.articuloService.articulos = res as Articulo[];
+          });
+  }
+  //import { ActivatedRoute } from '@angular/router';
+  //private _route:ActivatedRoute
+  //this._route.snapshot.paramMap.get('_id');
 
-     openDialogShow(){
-          const dialogConfig = new MatDialogConfig();
-          dialogConfig.disableClose = true;
-          dialogConfig.autoFocus = true;
-          dialogConfig.height = '550px';
-          dialogConfig.width = '700px';
-          this.dialog.open(DialogArticuloShowComponent, dialogConfig);
-     }
-     openDialogCreate(){
-          const dialogConfig = new MatDialogConfig();
-          dialogConfig.disableClose = true;
-          dialogConfig.autoFocus = true;
-          dialogConfig.height = '550px';
-          dialogConfig.width = '700px';
-
-          this.dialog.open(DialogArticuloCreateComponent, dialogConfig);
-     }
 }

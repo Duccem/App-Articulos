@@ -12,6 +12,7 @@ import { ArticulosComponent } from './components/articulos/articulos.component';
 import { DialogArticuloShowComponent } from './components/dialog-articulo-show/dialog-articulo-show.component';
 import { DialogArticuloCreateComponent } from './components/dialog-articulo-create/dialog-articulo-create.component';
 import { PrincipalPanelComponent } from './components/principal-panel/principal-panel.component';
+import { ControllerComponent } from './components/controller/controller.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PrincipalPanelComponent } from './components/principal-panel/principal-
     ArticulosComponent,
     DialogArticuloShowComponent,
     DialogArticuloCreateComponent,
-    PrincipalPanelComponent
+    PrincipalPanelComponent,
+    ControllerComponent
   ],
   imports: [
     BrowserModule,
@@ -29,13 +31,13 @@ import { PrincipalPanelComponent } from './components/principal-panel/principal-
     MaterialModule,
     RouterModule.forRoot([
          {path:'new',component:DialogArticuloCreateComponent},
+         {path:'edit/:id',component:DialogArticuloCreateComponent},
          {path:'show',component:DialogArticuloShowComponent},
          {path:'inicio',component:ArticulosComponent},
          {path:'',redirectTo:'inicio', pathMatch:'full'}
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [DialogArticuloCreateComponent,DialogArticuloShowComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
