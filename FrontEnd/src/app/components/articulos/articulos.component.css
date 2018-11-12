@@ -11,5 +11,8 @@ h4{
 }
 .foot{
      height: 100px;
-     width: 100%;   
+     width: 100%;
+}
+.clickeable{
+     cursor: pointer;
 }

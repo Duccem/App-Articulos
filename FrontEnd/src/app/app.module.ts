@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router'
 
 import { MaterialModule } from './material';
 
@@ -25,10 +26,16 @@ import { PrincipalPanelComponent } from './components/principal-panel/principal-
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule.forRoot([
+         {path:'new',component:DialogArticuloCreateComponent},
+         {path:'show',component:DialogArticuloShowComponent},
+         {path:'inicio',component:ArticulosComponent},
+         {path:'',redirectTo:'inicio', pathMatch:'full'}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DialogArticuloCreateComponent]
+  entryComponents: [DialogArticuloCreateComponent,DialogArticuloShowComponent]
 })
 export class AppModule { }

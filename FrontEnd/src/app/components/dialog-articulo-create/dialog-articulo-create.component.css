@@ -1,3 +1,11 @@
-.float{
-     float: right;
+h4{
+     text-align: left;
+}
+button{
+     float:right;
+     margin-right: 5px;
+     margin-bottom: 10px;
+}
+.foot{
+     height: 30px;
 }

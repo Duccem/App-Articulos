@@ -10,7 +10,7 @@
                </mat-form-field>
                <div class="col-md-8">
                     <div class="row center-xs middle-xs">
-                         <button class="col-md-4" style="height:50px;" mat-raised-button color="primary" (click)="openDialog()"><mat-icon>add</mat-icon>Crear Articulo</button>
+                         <button class="col-md-4" style="height:50px;" mat-raised-button color="primary" [routerLink]="['/new']"><mat-icon>add</mat-icon>Crear Articulo</button>
                          <div class="col-md-3"></div>
                          <div class="col-md-5 row">
                               <h4 class="col-md-12" style="text-align:left;">Filtre por numero de visitas</h4>
@@ -28,7 +28,7 @@
           </div>
      </div>
      <br><br>
-     <div class="card col-md-10 articulo">
+     <div class="card col-md-10 articulo clickeable" [routerLink]="['/show']">
           <h4 class="pacifico">Celulas</h4>
           <hr>
           <p>
