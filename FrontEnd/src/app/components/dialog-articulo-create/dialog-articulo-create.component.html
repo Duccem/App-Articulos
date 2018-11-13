@@ -1,27 +1,28 @@
 <div class="roboto row middle-xs center-xs">
-     <div class="card col-md-10">
+     <form #form="ngForm"  class="card col-md-10">
           <h2  class="pacifico">Nuevo Articulo</h2>
           <div class="row center-xs">
                <div class="row col-md-10">
                     <h4 class="col-md-12">Titulo del articulo</h4>
                     <mat-form-field class="col-md-12">
-                         <input matInput placeholder="Introduzca el titulo" type="text">
+                         <input name="title" #title = "ngModel" [(ngModel)]="articuloService.selectedArticulo.title"  matInput placeholder="Introduzca el titulo" type="text">
                     </mat-form-field>
                </div>
                <div class="row col-md-10">
                     <h4 class="col-md-12">Articulo</h4>
                     <mat-form-field class="col-md-12">
-                         <textarea  matInput #Articulo placeholder="Introduzca el contenido del articulo" maxlength="500" rows="7" cols="80"></textarea>
+                         <textarea name="content" #content="ngModel" [(ngModel)]="articuloService.selectedArticulo.content"  matInput #Articulo placeholder="Introduzca el contenido del articulo" maxlength="500" rows="7" cols="80"></textarea>
                          <mat-hint align="end">{{Articulo.value.length}} / 500</mat-hint>
                     </mat-form-field>
                </div>
+               <input name="visits" type="hidden" #visits ="ngModel" [(ngModel)]="articuloService.selectedArticulo.visits" value="0">
           </div>
           <br>
           <div class="buttons">
-               <button mat-raised-button color="primary"><mat-icon>save</mat-icon>Guardar</button>
+               <button mat-raised-button color="primary" (click)="crearArticulo(form)"><mat-icon>save</mat-icon>Guardar</button>
                <button mat-raised-button [routerLink]="['/inicio']" color="primary"><mat-icon>backspace</mat-icon> Cancelar</button>
           </div>
-     </div>
+     </form>
      <div class="foot col-md-10">
 
      </div>

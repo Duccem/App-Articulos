@@ -24,6 +24,7 @@ export class ArticulosService {
                return this.http.post(this.URL_API,busqueda);
           }
           createArticulo(articulo:Articulo){
+               console.log("guardando 2");
                return this.http.post(this.URL_API+'/create',articulo);
           }
           editArticulo(articulo:Articulo){
