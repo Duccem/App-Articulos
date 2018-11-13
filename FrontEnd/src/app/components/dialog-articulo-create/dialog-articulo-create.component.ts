@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ArticulosService} from '../../services/articulos.service';
 import { Articulo } from '../../models/articulo';
 import {NgForm} from '@angular/forms';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-dialog-articulo-create',
@@ -10,7 +11,7 @@ import {NgForm} from '@angular/forms';
 })
 export class DialogArticuloCreateComponent implements OnInit {
      articulo:Articulo;
-     constructor(private articuloService:ArticulosService) {
+     constructor(private articuloService:ArticulosService,public snackBar: MatSnackBar) {
           this.articulo = new Articulo();
      }
 
@@ -18,10 +19,10 @@ export class DialogArticuloCreateComponent implements OnInit {
      ngOnInit() {
      }
      crearArticulo(form:NgForm){
-          console.log("guardando 1");
           this.articuloService.createArticulo(form.value)
                .subscribe(res =>{
-                    console.log(res);
+                    this.openSnackBar("Articulo guardado!!");
+                    form.reset();
                     this.articuloService.getArticulos()
                     .subscribe(res =>{
                          this.articuloService.articulos = res as Articulo[];
@@ -29,4 +30,9 @@ export class DialogArticuloCreateComponent implements OnInit {
                });
 
      }
+     openSnackBar(message:string) {
+          this.snackBar.open(message,"Status", {
+               duration: 500,
+          });
+  }
 }

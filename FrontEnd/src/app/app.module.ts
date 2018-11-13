@@ -21,7 +21,7 @@ import { ControllerComponent } from './components/controller/controller.componen
     DialogArticuloShowComponent,
     DialogArticuloCreateComponent,
     PrincipalPanelComponent,
-    ControllerComponent
+    ControllerComponent,
   ],
   imports: [
     BrowserModule,
