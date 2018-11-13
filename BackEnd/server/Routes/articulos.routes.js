@@ -3,7 +3,6 @@ const router = express.Router();
 const articulo = require('../Controllers/articulo.controller');
 
 router.get('/',articulo.getAllArticulos);
-router.get('/:visitas',articulo.getArticulosByVisits);
 router.post('/',articulo.getArticulosByName);
 router.post('/create',articulo.createArticulo);
 router.put('/:id',articulo.editArtitculo);

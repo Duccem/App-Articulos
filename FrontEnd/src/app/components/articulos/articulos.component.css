@@ -16,3 +16,8 @@ h4{
 .clickeable{
      cursor: pointer;
 }
+
+.sinpadding{
+     padding-left: 0;
+     padding-right: 0;
+}

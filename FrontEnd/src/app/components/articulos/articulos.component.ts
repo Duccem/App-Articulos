@@ -20,6 +20,14 @@ export class ArticulosComponent implements OnInit {
                this.articuloService.articulos = res as Articulo[];
           });
   }
+  selectArticulo(articulo:Articulo){
+       this.articuloService.selectedArticulo = articulo;
+       this.articuloService.selectedArticulo.visits +=1;
+       this.articuloService.editArticulo(this.articuloService.selectedArticulo)
+            .subscribe(res =>{
+            });
+
+ }
   //import { ActivatedRoute } from '@angular/router';
   //private _route:ActivatedRoute
   //this._route.snapshot.paramMap.get('_id');

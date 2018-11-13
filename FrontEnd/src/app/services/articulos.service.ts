@@ -17,19 +17,17 @@ export class ArticulosService {
           getArticulos(){
                return this.http.get(this.URL_API);
           }
-          getArticulosByVisits(e:number){
-               return this.http.get(this.URL_API+'/'+e);
-          }
-          getArticulosByName(busqueda:string){
-               return this.http.post(this.URL_API,busqueda);
+          getArticulosByName(e:string){
+               return this.http.post(this.URL_API,{busqueda:e});
           }
           createArticulo(articulo:Articulo){
                return this.http.post(this.URL_API+'/create',articulo);
           }
           editArticulo(articulo:Articulo){
-               return this.http.put(this.URL_API+'/${articulo._id}',articulo);
+               console.log(articulo._id);
+               return this.http.put(this.URL_API+'/'+articulo._id,articulo);
           }
           deleteArticulo(_id:string){
-               return this.http.delete(this.URL_API+'/${_id}');
+               return this.http.delete(this.URL_API+'/'+_id);
           }
 }

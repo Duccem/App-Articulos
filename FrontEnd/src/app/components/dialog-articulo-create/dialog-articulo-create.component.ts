@@ -19,15 +19,28 @@ export class DialogArticuloCreateComponent implements OnInit {
      ngOnInit() {
      }
      crearArticulo(form:NgForm){
-          this.articuloService.createArticulo(form.value)
-               .subscribe(res =>{
-                    this.openSnackBar("Articulo guardado!!");
-                    form.reset();
-                    this.articuloService.getArticulos()
+          if(form.value._id){
+               this.articuloService.editArticulo(form.value)
                     .subscribe(res =>{
-                         this.articuloService.articulos = res as Articulo[];
+                         this.openSnackBar("Articulo actualizado!!");
+                         form.reset();
+                         this.articuloService.getArticulos()
+                         .subscribe(res =>{
+                              this.articuloService.articulos = res as Articulo[];
+                         });
                     });
-               });
+          }else{
+               this.articuloService.createArticulo(form.value)
+                    .subscribe(res =>{
+                         this.openSnackBar("Articulo guardado!!");
+                         form.reset();
+                         this.articuloService.getArticulos()
+                         .subscribe(res =>{
+                              this.articuloService.articulos = res as Articulo[];
+                         });
+                    });
+
+          }
 
      }
      openSnackBar(message:string) {
@@ -35,4 +48,7 @@ export class DialogArticuloCreateComponent implements OnInit {
                duration: 500,
           });
   }
+  deselectArticulo(){
+       this.articuloService.selectedArticulo = new Articulo();
+ }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DialogArticuloCreateComponent } from '../dialog-articulo-create/dialog-articulo-create.component';
-import {MatDialog, MatDialogConfig} from "@angular/material";
+import {ArticulosService} from '../../services/articulos.service';
+import { Articulo } from '../../models/articulo';
 
 @Component({
   selector: 'app-dialog-articulo-show',
@@ -9,17 +9,13 @@ import {MatDialog, MatDialogConfig} from "@angular/material";
 })
 export class DialogArticuloShowComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private articuloService:ArticulosService) { }
 
   ngOnInit() {
+       
   }
-  openDialogCreate(){
-       const dialogConfig = new MatDialogConfig();
-       dialogConfig.disableClose = true;
-       dialogConfig.autoFocus = true;
-       dialogConfig.height = '550px';
-       dialogConfig.width = '700px';
 
-       this.dialog.open(DialogArticuloCreateComponent, dialogConfig);
-  }
+  deselectArticulo(){
+       this.articuloService.selectedArticulo = new Articulo();
+ }
 }

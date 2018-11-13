@@ -1,7 +1,8 @@
 <div class="row middle-xs center-xs roboto">
-     <app-controller></app-controller>
+     <app-controller class="col-md-10 sinpadding"></app-controller>
      <br><br>
-     <div class="card col-md-10 articulo clickeable" [routerLink]="['/show']" *ngFor="let articulo of articuloService.articulos">
+     <div class="card col-md-10 articulo clickeable" [routerLink]="['/show']"
+     *ngFor="let articulo of articuloService.articulos"(click)="selectArticulo(articulo)">
           <input type="hidden" name="" value="{{articulo._id}}">
           <input type="hidden" name="" value="{{articulo.visits}}">
           <h4 class="pacifico">{{articulo.title}}</h4>
