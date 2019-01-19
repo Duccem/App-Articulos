@@ -14,6 +14,6 @@ Ademas permite la edicion de los articulos comodamente
 
 ## Creacion de los articulos
 Y lo mas importante es la creacion de nuevos articulos para la lectura
-<img src="https://github.com/Duccem/App-Articulos/blob/master/Docs/Screenshot_4.png" alt="screenshot"/>
+<img src="https://github.com/Duccem/App-Articulos/blob/master/Docs/Screenshot_5.png" alt="screenshot"/>
 
 
