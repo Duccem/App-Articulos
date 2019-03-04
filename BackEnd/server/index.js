@@ -1,4 +1,5 @@
 const express  = require('express');
+const path = require('path');
 const cors = require('cors');
 const app = express();
 const { mongoose } = require ('./database');
@@ -10,6 +11,7 @@ app.use(express.json());
 app.use(cors({origin:'http://localhost:4200'}));
 //Routes
 app.use('/api/articulos/',require('./Routes/articulos.routes'));
+app.use('/',express.static(path.join(__dirname,'./public')));
 
 //Starting the server
 

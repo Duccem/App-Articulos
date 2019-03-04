@@ -9,7 +9,7 @@ import { AppComponent } from '../app.component';
 export class ArticulosService {
           selectedArticulo: Articulo;//el menu seleccionado
           articulos: Articulo[];//arreglo de menus devuelto
-          readonly URL_API = 'http://localhost:3000/api/articulos';//URL de la URL_API
+          readonly URL_API = '/api/articulos';//URL de la URL_API
           constructor(private http: HttpClient) {
                this.selectedArticulo = new Articulo();
           }

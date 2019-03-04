@@ -9,25 +9,25 @@ import { Articulo } from '../../models/articulo';
 })
 export class ControllerComponent implements OnInit {
 
-  constructor(private articuloService:ArticulosService) { }
+     constructor(private articuloService:ArticulosService) { }
 
-  ngOnInit() {
-  }
-  filtrar(e){
-       if(e.target.value !=""){
-            this.articuloService.getArticulosByName(e.target.value)
+     ngOnInit() {
+     }
+     filtrar(e){
+          if(e.target.value !=""){
+               this.articuloService.getArticulosByName(e.target.value)
+                    .subscribe(res =>{
+                         this.articuloService.articulos = res as Articulo[];
+               });
+          }else{
+               this.limpiar();
+          }
+
+     }
+     limpiar(){
+          this.articuloService.getArticulos()
                .subscribe(res =>{
                     this.articuloService.articulos = res as Articulo[];
-               });
-       }else{
-            this.limpiar();
-       }
-
- }
- limpiar(){
-      this.articuloService.getArticulos()
-         .subscribe(res =>{
-              this.articuloService.articulos = res as Articulo[];
-         });
-}
+          });
+     }
 }
